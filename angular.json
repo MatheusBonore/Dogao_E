@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Dogao"
+    }
+  },
+  "defaultProject": "Dogao",
+  "cli": {
+    "analytics": "2e36c6cb-ac45-486d-84c7-09ecd5029fbd"
+  }
 }

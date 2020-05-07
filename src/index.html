@@ -22,14 +22,34 @@
       margin: 0;
       padding: 0;
     }
+
+    img.logo-splash{
+      width: 100px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+
+    div.align-splash{
+      min-height: 100%;  
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;      
+    }
   </style>
 </head>
 
 <body>
-  <app-root>Carregando...</app-root>
-
-  <script type="text/javascript" src="assets/pace.min.js"></script>
-  <script type="text/javascript" src="assets/js/vendor/holder.min.js"></script>
+  <app-root>
+    <div class="div align-splash">
+      <img class="logo-splash justify-content-center"
+        src="https://lh4.googleusercontent.com/B1jGiY-BjJOSp1HxN8BSY0ceB6FLjWDeKEhgaU6sCuv0SWEf2uISFOPH04Nrd5nuXzQ9wrC-8lfJrbkEMVA0=w1920-h979"
+        alt="">
+    </div>
+  </app-root>
 
   <noscript>Por favor ative o JavaScript para continuar usando este aplicativo.</noscript>
 </body>

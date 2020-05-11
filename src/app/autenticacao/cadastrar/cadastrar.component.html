@@ -1,1 +1,27 @@
-<p>cadastrar works!</p>
+<form>
+	<h3>Criar uma Conta do Dogão</h3>
+	<p>Insira seu nome e sobrenome</p>
+
+	<div class="form-group" style="margin-top:55px;">
+		<!-- <label for="nome">Nome</label> -->
+		<input type="text" class="form-control" id="nome" placeholder="Nome" autocomplete="off" required>
+    </div>
+    <div class="form-group" style="margin-top:5px;">
+		<!-- <label for="sobrenome">Sobrenome</label> -->
+		<input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" autocomplete="off" required>
+	</div>
+
+	<div class="clearfix" style="margin-top: 30px; margin-bottom:30px;">
+		<button type="button" [routerLink]='["/autenticacao/entrar"]' class="btn btn-link float-left">Faça login em vez disso</button>
+		<button type="submit" class="btn btn-radius btn-success float-right">Próxima</button>
+	</div>
+
+	<p>ou cadastrar com</p>
+
+	<div class="redes-sociais">
+		<button type="button" class="btn btn-light"><img src="../../../assets/amazon/logo-google.png" alt=""
+				srcset=""></button>
+		<button type="button" class="btn btn-light"><img src="../../../assets/amazon/logo-facebook.png" alt=""
+				srcset=""></button>
+	</div>
+</form>

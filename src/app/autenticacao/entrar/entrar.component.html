@@ -9,7 +9,8 @@
 			<input type="text" class="form-control" id="email-telefone" placeholder="E-mail ou telefone" autocomplete="off"
 				required>
 			<div class="clearfix">
-				<button type="button" class="btn btn-link float-left">Esqueceu seu e-mail?</button>
+				<button type="button" [routerLink]='["/autenticacao/recuperar/email"]' class="btn btn-link float-left">Esqueceu
+					seu e-mail?</button>
 			</div>
 		</div>
 
@@ -41,7 +42,8 @@
 			<!-- <label for="senha">Senha</label> -->
 			<input type="text" class="form-control" id="senha" placeholder="Senha" autocomplete="off" required>
 			<div class="clearfix" style="margin-top: 10px;">
-				<button type="button" class="btn btn-link float-left">Esqueceu sua senha?</button>
+				<button type="button" [routerLink]='["/autenticacao/recuperar/senha"]' class="btn btn-link float-left">Esqueceu
+					sua senha?</button>
 				<button type="submit" class="btn btn-radius btn-success float-right">Próxima</button>
 			</div>
 		</div>

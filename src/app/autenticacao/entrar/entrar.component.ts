@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/services/usuario/usuario.service';
 
 @Component({
   selector: 'app-entrar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarComponent implements OnInit {
 
-  constructor() { }
+  public form = {
+    email_telefone: "",
+    senha: ""
+  };
 
   ngOnInit(): void {
   }
 
+  irParaPasso2() {
+
+    document.getElementById('passo-1').hidden = true;
+    document.getElementById('passo-2').hidden = false;
+  }
 }

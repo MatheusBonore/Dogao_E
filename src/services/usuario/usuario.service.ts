@@ -9,8 +9,7 @@ import { Usuario } from 'src/models/usuario';
 @Injectable({
   providedIn: 'root'
 })
-
-export class AutenticacaoService implements OnInit {
+export class UsuarioService implements OnInit {
   private _usuario: Usuario;
 
   set usuario(usuario: Usuario) {
@@ -23,7 +22,7 @@ export class AutenticacaoService implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private appService: AppService
+    private appService: AppService,
   ) { }
 
   ngOnInit(): void { }
@@ -31,5 +30,4 @@ export class AutenticacaoService implements OnInit {
   public autenticarUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.appService.baseUrl + 'api/autenticacao', JSON.stringify(usuario), { headers: this.appService.headers });
   }
-
 }

@@ -10,7 +10,9 @@ import { appRoutes } from './app.routing';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
-import { AppServico } from 'src/services/app.service';
+import { AppService } from 'src/services/app.service';
+import { AutenticacaoService } from 'src/services/autenticacao/autenticacao.service';
+import { UsuarioService } from 'src/services/usuario/usuario.service';
 
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import { EntrarComponent } from './autenticacao/entrar/entrar.component';
@@ -39,7 +41,9 @@ import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
-    AppServico
+    AppService,
+    AutenticacaoService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

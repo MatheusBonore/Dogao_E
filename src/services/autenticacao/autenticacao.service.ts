@@ -29,7 +29,7 @@ export class AutenticacaoService implements OnInit {
   ngOnInit(): void { }
 
   public autenticarUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.appService.baseUrl + 'api/autenticacao', JSON.stringify(usuario), { headers: this.appService.headers });
+    return this.http.post<Usuario>(this.appService.baseUrl + 'api/autenticacao/verificar-login', JSON.stringify(usuario), { headers: this.appService.headers });
   }
 
 }

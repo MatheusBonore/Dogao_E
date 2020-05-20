@@ -8,6 +8,8 @@ import { RecuperarComponent } from './autenticacao/recuperar/recuperar.component
 import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
+import { InicioComponent } from './inicio/inicio.component';
+
 export const appRoutes: Routes = [
 	{
 		path: 'autenticacao',
@@ -34,16 +36,7 @@ export const appRoutes: Routes = [
 			}
 		]
 	}, {
-		path: '',
-		pathMatch: 'full',
-		redirectTo: 'autenticacao'
-	}, {
-		path: 'autenticacao',
-		pathMatch: 'full',
-		redirectTo: '/entrar'
-	}, {
-		path: 'recuperar',
-		pathMatch: 'full',
-		redirectTo: 'autenticacao'
-	},
+		path: 'inicio',
+		component: InicioComponent
+	}
 ];

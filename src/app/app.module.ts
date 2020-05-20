@@ -22,6 +22,10 @@ import { RecuperarComponent } from './autenticacao/recuperar/recuperar.component
 import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
+import { InicioComponent } from './inicio/inicio.component';
+import { NavBarComponent } from './inicio/nav-bar/nav-bar.component';
+import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,10 @@ import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
     CadastrarComponent,
     RecuperarComponent,
     EmailComponent,
-    SenhaComponent
+    SenhaComponent,
+    InicioComponent,
+    NavBarComponent,
+    NavBarBottomComponent
   ],
   imports: [
     BrowserModule,

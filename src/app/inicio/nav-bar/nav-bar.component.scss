@@ -1,0 +1,10 @@
+.pesquisa {
+  height: 40px;
+  width: 40px;
+  color: #434343;
+
+  &:hover,
+  &:focus {
+    background-color: #eaeaea;
+  }
+}

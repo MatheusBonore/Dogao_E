@@ -1,10 +1,31 @@
-<nav class="navbar navbar-light bg-light p-0">
-  <div class="p-1 clearfix w-100" style="min-width: 320px;">
-    <a class="navbar-brand" href="#">
-      <img src="../../../assets/amazon/logo-completo.png" height="32" alt="" srcset="">
+<nav class="navbar fixed-top navbar-light bg-light shadow-sm">
+  <a class="navbar-brand">
+    <img src="../../../assets/amazon/logo-completo.png" height="35" alt="" srcset="">
+  </a>
+
+  <form class="form-inline">
+
+
+    <div>
+
+
+      <div class="input-group rounded-pill" style="background-color: #F0F2F5;">
+
+        <div class="input-group-prepend">
+          <label for="pesquisar" class="input-group-text bg-transparent border-0">
+            <i class="fas fa-search"></i>
+          </label>
+        </div>
+        <input type="text" class="form-control bg-transparent border-0" id="pesquisar" placeholder="Pesquisar no Dogão">
+
+      </div>
+
+
+    </div>
+
+    <a class="btn btn-link rounded-circle pesquisa" [routerLink]='["/inicio/pesquisa"]'>
+      <i class="fas fa-search"></i>
     </a>
-    
-      <button class="btn float-right" type="button"><i class="fas fa-search" style="color:#434343;"></i></button>
-    
-  </div>
+  </form>
+
 </nav>

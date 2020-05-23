@@ -25,6 +25,10 @@ import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NavBarComponent } from './inicio/nav-bar/nav-bar.component';
 import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.component';
+import { PesquisaComponent } from './inicio/pesquisa/pesquisa.component';
+
+import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
+import { CategoriaComponent } from './inicio/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,10 @@ import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.co
     SenhaComponent,
     InicioComponent,
     NavBarComponent,
-    NavBarBottomComponent
+    NavBarBottomComponent,
+    PesquisaComponent,
+    LinhaTempoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

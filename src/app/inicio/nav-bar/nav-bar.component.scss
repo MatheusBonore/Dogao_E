@@ -1,10 +1,5 @@
-.pesquisa {
-  height: 40px;
-  width: 40px;
-  color: #434343;
+@use '../inicio.component.scss' as inicio;
 
-  &:hover,
-  &:focus {
-    background-color: #eaeaea;
-  }
+.pesquisar {
+  @include inicio.botao-efeito;
 }

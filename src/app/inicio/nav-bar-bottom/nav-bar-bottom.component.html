@@ -1,8 +1,9 @@
-<nav class="navbar fixed-bottom navbar-light bg-light p-0 justify-content-center">
+<nav class="navbar fixed-bottom navbar-light bg-white border-top p-0 justify-content-center">
   <div class="row menu container-fluid p-0 m-0">
-    <a class="col p-0 item active"><i class="fas fa-home pt-3 pb-3"></i></a>
-    <a class="col p-0 item" [routerLink]='["/inicio/categoria"]'><i class="fas fa-paw pt-3 pb-3"></i></a>
-    <a class="col p-0 item"><i class="fas fa-bell pt-3 pb-3"></i></a>
-    <a class="col p-0 item"><i class="fas fa-bars pt-3 pb-3"></i></a>
+    <button class="col" *ngFor="let item of itens" [ngClass]="{'active': seEncontraNoLink(item)}">
+      <span>
+        <i [ngClass]="item.icone"></i>
+      </span>
+    </button>
   </div>
 </nav>

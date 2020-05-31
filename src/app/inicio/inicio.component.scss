@@ -1,0 +1,41 @@
+$cor-padrao: rgba(67, 67, 67, 1);
+$cor-padrao-selecionado: rgb(230, 230, 230);
+$cor-padrao-precionado: rgba(242, 242, 242, 0.5);
+
+@mixin botao-efeito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  min-width: 40px;
+
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  border: none;
+  background: none;
+  border-radius: 50rem;
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  color: $cor-padrao;
+
+  /* mouse over link */
+  &:hover,
+  &:focus {
+    background-color: $cor-padrao-selecionado;
+  }
+
+  /* selected link */
+  &:active {
+    background-color: $cor-padrao-precionado;
+  }
+}

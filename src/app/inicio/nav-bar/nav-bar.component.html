@@ -1,31 +1,30 @@
-<nav class="navbar fixed-top navbar-light bg-light shadow-sm">
+<nav class="navbar fixed-top navbar-light bg-white border-bottom shadow-sm" *ngIf="mostrarNavBar">
   <a class="navbar-brand">
     <img src="../../../assets/amazon/logo-completo.png" height="35" alt="" srcset="">
   </a>
 
+  <button class="rounded-circle pesquisar" (click)="pesquisar();">
+    <i class="fas fa-search"></i>
+  </button>
+</nav>
+
+<div class="bg-white w-100 h-100 p-3" *ngIf="!mostrarNavBar" style="max-width: 520px;">
   <form class="form-inline">
+    <div class="input-group w-100">
 
-
-    <div>
-
-
-      <div class="input-group rounded-pill" style="background-color: #F0F2F5;">
-
-        <div class="input-group-prepend">
-          <label for="pesquisar" class="input-group-text bg-transparent border-0">
-            <i class="fas fa-search"></i>
-          </label>
-        </div>
-        <input type="text" class="form-control bg-transparent border-0" id="pesquisar" placeholder="Pesquisar no Dogão">
-
+      <div class="input-group-prepend">
+        <button (click)="pesquisar();" class="pesquisar rounded-circle border-0">
+          <i class="fas fa-arrow-left"></i>
+        </button>
       </div>
-
-
+      <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2" style="background-color: #F0F2F5;"
+        id="pesquisar" placeholder="Pesquisar no Dogão">
+      <div class="input-group-prepend">
+        <button for="pesquisar" class="pesquisar rounded-circle border-0">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
-
-    <a class="btn btn-link rounded-circle pesquisa" [routerLink]='["/inicio/pesquisa"]'>
-      <i class="fas fa-search"></i>
-    </a>
   </form>
 
-</nav>
+</div>

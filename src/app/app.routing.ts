@@ -9,7 +9,6 @@ import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
 import { InicioComponent } from './inicio/inicio.component';
-import { PesquisaComponent } from './inicio/pesquisa/pesquisa.component';
 import { CategoriaComponent } from './inicio/categoria/categoria.component';
 
 export const appRoutes: Routes = [
@@ -42,9 +41,6 @@ export const appRoutes: Routes = [
 		component: InicioComponent,
 		children: [
 			{
-				path: 'pesquisa',
-				component: PesquisaComponent
-			}, {
 				path: 'categoria',
 				component: CategoriaComponent
 			}

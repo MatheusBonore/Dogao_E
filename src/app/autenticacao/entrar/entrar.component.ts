@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-entrar',
@@ -13,7 +14,22 @@ export class EntrarComponent implements OnInit {
     senha: ""
   };
 
-  ngOnInit(): void {
+  constructor(
+    private http: HttpClient
+  ) {}
+
+  ngOnInit(): void { }
+
+  fazerLogin(): boolean {
+
+    let formData = new FormData();
+    formData.append('telefone', '14991251792');
+    formData.append('senha', 'senha@123');
+
+    let teste = this.http.post('http://localhost/autenticacao', formData).toPromise()
+    .then(res => console.log(res));
+
+    return false;
   }
 
   irParaPasso2() {

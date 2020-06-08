@@ -17,8 +17,8 @@
           <i class="fas fa-arrow-left"></i>
         </button>
       </div>
-      <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2" style="height:40px; background-color: #F0F2F5;"
-        id="pesquisar" placeholder="Pesquisar no Dogão">
+      <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+        style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
       <div class="input-group-prepend">
         <button for="pesquisar" class="pesquisar rounded-circle border-0">
           <i class="fas fa-search"></i>
@@ -26,11 +26,12 @@
       </div>
     </div>
 
-    <!-- <div>
-      <input type="checkbox" id="scales" name="scales"
-             checked>
-      <label for="scales">Scales</label>
-    </div> -->
+    <div class="filtro text-center h-100" style="align-items: center; justify-content: center;">
+      <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+        <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+        {{filtro.nome}}
+      </label>
+    </div>
 
   </form>
 

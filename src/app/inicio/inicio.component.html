@@ -1,5 +1,85 @@
-<div class="w-100 h-100" style="background-color: #EAEAEA;">
+<div class="categoria" *ngIf="!mostrarInicio">
+  <div class="itens">
+    <div id="comunidade" class="tab">
+      <div class="input-group m-3" style="width: auto;">
+        <div class="input-group-prepend">
+          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="text-center align-middle">Comunidade</h3>
+    </div>
+
+    <div id="achados" class="tab">
+      <div class="input-group m-3" style="width: auto;">
+        <div class="input-group-prepend">
+          <button class="pesquisar rounded-circle border-0">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="text-center align-middle">Achados</h3>
+    </div>
+
+    <div id="doacao" class="tab">
+      <div class="input-group m-3" style="width: auto;">
+        <div class="input-group-prepend">
+          <button class="pesquisar rounded-circle border-0">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="text-center align-middle">Doação</h3>
+    </div>
+
+    <div id="perdidos" class="tab">
+      <div class="input-group m-3" style="width: auto;">
+        <div class="input-group-prepend">
+          <button class="pesquisar rounded-circle border-0">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="text-center align-middle">Perdidos</h3>
+    </div>
+  </div>
+</div>
+
+<div class="w-100 h-100" style="background-color: #EAEAEA;" *ngIf="mostrarInicio">
   <app-nav-bar></app-nav-bar>
   <app-linha-tempo></app-linha-tempo>
-  <app-nav-bar-bottom></app-nav-bar-bottom>
+  <app-nav-bar-bottom (childEvent)="obterItem($event)"></app-nav-bar-bottom>
 </div>

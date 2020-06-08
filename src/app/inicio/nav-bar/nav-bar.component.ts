@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 declare interface Filtro {
+  id: number;
   nome: string;
-  tipo: string;
 }
 
 declare type Filtros = Filtro[];
@@ -17,44 +17,44 @@ export class NavBarComponent implements OnInit {
 
   public filtros: Filtros = [
     {
-      nome: 'Curto',
-      tipo: 'pelagem'
+      id: 1,
+      nome: 'Curto'
     }, {
-      nome: 'Longo',
-      tipo: 'pelagem'
+      id: 2,
+      nome: 'Longo'
     }, {
-      nome: 'Sólido',
-      tipo: ''
+      id: 3,
+      nome: 'Sólido'
     }, {
-      nome: 'Pelo Encaracolado',
-      tipo: ''
+      id: 4,
+      nome: 'Pelo Encaracolado'
     }, {
-      nome: 'Pelagem Dupla',
-      tipo: ''
+      id: 5,
+      nome: 'Pelagem Dupla'
     }, {
-      nome: 'Escama',
-      tipo: ''
+      id: 6,
+      nome: 'Escama'
     }, {
-      nome: 'Golden Retriever',
-      tipo: ''
+      id: 7,
+      nome: 'Golden Retriever'
     }, {
-      nome: 'Beagle',
-      tipo: ''
+      id: 8,
+      nome: 'Beagle'
     }, {
-      nome: 'Pug',
-      tipo: ''
+      id: 9,
+      nome: 'Pug'
     }, {
-      nome: 'Shih-Tzu',
-      tipo: ''
+      id: 10,
+      nome: 'Shih-Tzu'
     }, {
-      nome: '23 - 25 cm',
-      tipo: ''
+      id: 11,
+      nome: '23 - 25 cm'
     }, {
-      nome: '30 cm',
-      tipo: ''
+      id: 12,
+      nome: '30 cm'
     }, {
-      nome: '41 - 58 cm',
-      tipo: ''
+      id: 13,
+      nome: '41 - 58 cm'
     }
   ];
 

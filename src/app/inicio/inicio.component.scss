@@ -5,32 +5,87 @@
   overflow-x: scroll;
 
   .itens {
+    color: white;
     width: 400%;
     height: inherit;
+
+    .tab {
+      float: left;
+      width: 25%;
+      height: 100%;
+      text-align: center;
+
+      .galeria {
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        .fotos {
+          width: max-content;
+          height: inherit;
+
+          display: flex;
+
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          padding-right: 15px;
+          padding-left: 15px;
+
+          .foto {
+            background-color: #f0f2f5;
+            border-radius: 4px;
+            margin: 0 10px 0 10px;
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            img {
+              height: 180px;
+            }
+          }
+        }
+      }
+    }
+
+    #comunidade {
+      background-color: #00a1f1;
+    }
+
+    #achados {
+      background-color: #7cbb00;
+    }
+
+    #doacao {
+      background-color: #ffbb00;
+    }
+
+    #perdidos {
+      background-color: #f65314;
+    }
+
+    .selecionar {
+      background-color: white;
+      border: none;
+      color: #00a1f1;
+
+      min-height: 40px;
+      min-width: 40px;
+
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+
+      // -webkit-user-select: none;
+      // -moz-user-select: none;
+      // -ms-user-select: none;
+      // user-select: none;
+
+      border-radius: 50rem;
+
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    }
   }
-
-  .itens > .tab {
-    float: left;
-    width: 25%;
-    height: 100%;
-    text-align: center;
-  }
-}
-
-#comunidade {
-  background-color: #00a1f1;
-}
-
-#achados {
-  background-color: #7cbb00;
-}
-
-#doacao {
-  background-color: #ffbb00;
-}
-
-#perdidos {
-  background-color: #f65314;
 }
 
 $cor-padrao: rgba(67, 67, 67, 1);
@@ -87,5 +142,39 @@ $cor-padrao-precionado: rgba(242, 242, 242, 0.5);
   /* selected link */
   &:active {
     background-color: transparent;
+  }
+}
+
+.filtro {
+  // display: contents;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+
+  label {
+    @include botao-efeito;
+    display: inline-flex;
+
+    color: white;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: solid 2px rgba(242, 242, 242, 0.5);
+
+    margin: 3px;
+
+    /* mouse over link */
+    &:hover,
+    &:focus {
+      background-color: $cor-padrao-selecionado;
+      color: $cor-padrao;
+    }
+
+    /* selected link */
+    &:active {
+      background-color: $cor-padrao-precionado;
+      color: $cor-padrao;
+    }
   }
 }

@@ -1,4 +1,4 @@
-<div class="categoria" *ngIf="!mostrarInicio">
+<div class="categoria" *ngIf="!mostrarInicio" style="position:fixed;  min-width: 320px; max-width: 520px;">
   <div class="itens">
     <div id="comunidade" class="tab">
       <div class="input-group m-3" style="width: auto;">
@@ -16,13 +16,40 @@
         </div>
       </div>
 
-      <h3 class="text-center align-middle">Comunidade</h3>
+      <h3 class="text-center align-middle mt-5 mb-5">Comunidade</h3>
+
+      <div class="galeria text-center align-middle">
+        <div class="fotos">
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
+              srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
+              srcset="">
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
+        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+          {{filtro.nome}}
+        </label>
+      </div>
+
+      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
+        <button class="selecionar pl-5 pr-5">Selecionar</button>
+      </div>
     </div>
 
     <div id="achados" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
+          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -35,13 +62,40 @@
         </div>
       </div>
 
-      <h3 class="text-center align-middle">Achados</h3>
+      <h3 class="text-center align-middle mt-5 mb-5">Achados</h3>
+
+      <div class="galeria text-center align-middle">
+        <div class="fotos">
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
+              srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
+              srcset="">
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
+        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+          {{filtro.nome}}
+        </label>
+      </div>
+
+      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
+        <button class="selecionar pl-5 pr-5">Selecionar</button>
+      </div>
     </div>
 
     <div id="doacao" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
+          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -54,13 +108,40 @@
         </div>
       </div>
 
-      <h3 class="text-center align-middle">Doação</h3>
+      <h3 class="text-center align-middle mt-5 mb-5">Doação</h3>
+
+      <div class="galeria text-center align-middle">
+        <div class="fotos">
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
+              srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
+              srcset="">
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
+        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+          {{filtro.nome}}
+        </label>
+      </div>
+
+      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
+        <button class="selecionar pl-5 pr-5">Selecionar</button>
+      </div>
     </div>
 
     <div id="perdidos" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
+          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -73,7 +154,34 @@
         </div>
       </div>
 
-      <h3 class="text-center align-middle">Perdidos</h3>
+      <h3 class="text-center align-middle mt-5 mb-5">Perdidos</h3>
+
+      <div class="galeria text-center align-middle">
+        <div class="fotos">
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
+              srcset="">
+          </div>
+          <div class="foto">
+            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
+              srcset="">
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
+        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+          {{filtro.nome}}
+        </label>
+      </div>
+
+      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
+        <button class="selecionar pl-5 pr-5">Selecionar</button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 <nav class="navbar fixed-bottom navbar-light bg-white border-top p-0 justify-content-center">
   <div class="row menu container-fluid p-0 m-0">
-    <button class="col" *ngFor="let item of itens" [ngClass]="{'active': seEncontraNoLink(item)}" (click)="retornarItem(item)">
+    <button class="col" *ngFor="let item of itens" [ngClass]="{'active': seEncontraNoLink(item)}"
+      (click)="retornarItem(item)">
       <span>
         <i [ngClass]="item.icone"></i>
       </span>

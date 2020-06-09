@@ -49,18 +49,30 @@
 
     #comunidade {
       background-color: #00a1f1;
+      .selecionar {
+        color: #00a1f1;
+      }
     }
 
     #achados {
       background-color: #7cbb00;
+      .selecionar {
+        color: #7cbb00;
+      }
     }
 
     #doacao {
       background-color: #ffbb00;
+      .selecionar {
+        color: #ffbb00;
+      }
     }
 
     #perdidos {
       background-color: #f65314;
+      .selecionar {
+        color: #f65314;
+      }
     }
 
     .selecionar {
@@ -74,11 +86,6 @@
       text-decoration: none;
       cursor: pointer;
       outline: none;
-
-      // -webkit-user-select: none;
-      // -moz-user-select: none;
-      // -ms-user-select: none;
-      // user-select: none;
 
       border-radius: 50rem;
 

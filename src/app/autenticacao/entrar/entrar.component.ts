@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/services/usuario/usuario.service';
-import { HttpClient } from '@angular/common/http';
+import { Usuario } from 'src/models/usuario';
 
 @Component({
   selector: 'app-entrar',
@@ -8,33 +7,41 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['../autenticacao.component.scss']
 })
 export class EntrarComponent implements OnInit {
+  private _step: number = 1;
 
-  public form = {
-    email_telefone: "",
-    senha: ""
-  };
+  public usuario: Usuario = new Usuario();
 
-  constructor(
-    private http: HttpClient
-  ) {}
+  set step(step: number) {
+    this._step = step;
+  }
+
+  get step(): number {
+    return this._step;
+  }
+
+  constructor() { }
 
   ngOnInit(): void { }
 
-  fazerLogin(): boolean {
-
-    let formData = new FormData();
-    formData.append('telefone', '14991251792');
-    formData.append('senha', 'senha@123');
-
-    let teste = this.http.post('http://localhost/autenticacao', formData).toPromise()
-    .then(res => console.log(res));
-
-    return false;
+  private avancarStep() {
+    this.step += 1;
   }
 
-  irParaPasso2() {
+  public verificarStep(step: number): boolean {
+    return step === this.step;
+  }
 
-    document.getElementById('passo-1').hidden = true;
-    document.getElementById('passo-2').hidden = false;
+  public verificarEmailTelefone(usuario: Usuario) {
+    if (!usuario.email)
+      console.log('em branco')
+    else {
+      if (usuario.nome) {
+        this.avancarStep();
+      }
+    }
+  }
+
+  public verificarSenha(usuario: Usuario) {
+
   }
 }

@@ -27,7 +27,6 @@ import { NavBarComponent } from './inicio/nav-bar/nav-bar.component';
 import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.component';
 
 import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
-import { CategoriaComponent } from './inicio/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +40,7 @@ import { CategoriaComponent } from './inicio/categoria/categoria.component';
     InicioComponent,
     NavBarComponent,
     NavBarBottomComponent,
-    LinhaTempoComponent,
-    CategoriaComponent
+    LinhaTempoComponent
   ],
   imports: [
     BrowserModule,

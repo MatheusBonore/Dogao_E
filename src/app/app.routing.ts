@@ -9,10 +9,17 @@ import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
 import { InicioComponent } from './inicio/inicio.component';
-import { CategoriaComponent } from './inicio/categoria/categoria.component';
 
 export const appRoutes: Routes = [
-	{
+	{ //Verificar se existe o usuario autenticado.
+		path: '',
+		pathMatch: 'full',
+		redirectTo: '/autenticacao/entrar'
+	}, { //Se na rota estiver somente autenticacao dever ser feito um redirecionamento para algum children
+		path: 'autenticacao',
+		pathMatch: 'full',
+		redirectTo: 'autenticacao/entrar'
+	}, {
 		path: 'autenticacao',
 		component: AutenticacaoComponent,
 		children: [
@@ -38,12 +45,6 @@ export const appRoutes: Routes = [
 		]
 	}, {
 		path: 'inicio',
-		component: InicioComponent,
-		children: [
-			{
-				path: 'categoria',
-				component: CategoriaComponent
-			}
-		]
+		component: InicioComponent
 	}
 ];

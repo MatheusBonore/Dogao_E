@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/models/usuario';
 
 @Component({
@@ -9,6 +11,7 @@ import { Usuario } from 'src/models/usuario';
 export class EntrarComponent implements OnInit {
   private _step: number = 1;
 
+  public autenticacaoEntrarForm: NgForm;
   public usuario: Usuario = new Usuario();
 
   set step(step: number) {
@@ -19,11 +22,13 @@ export class EntrarComponent implements OnInit {
     return this._step;
   }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void { }
 
-  private avancarStep() {
+  public avancarStep() {
     this.step += 1;
   }
 
@@ -32,16 +37,20 @@ export class EntrarComponent implements OnInit {
   }
 
   public verificarEmailTelefone(usuario: Usuario) {
-    if (!usuario.email)
-      console.log('em branco')
-    else {
-      if (usuario.nome) {
-        this.avancarStep();
+    if (usuario.email) {
+      if (!/[A-Z]/i.test(usuario.email)) {
+        usuario.telefone = usuario.email;
+        delete usuario.email;
       }
+      //CARREGAR NOME DO USUARIO AQUI
+      this.avancarStep();
     }
   }
 
   public verificarSenha(usuario: Usuario) {
-
+    if (usuario.senha) {
+      localStorage.setItem('logado','true');
+      this.router.navigateByUrl('/inicio');
+    }
   }
 }

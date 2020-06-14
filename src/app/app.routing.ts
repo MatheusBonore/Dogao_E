@@ -9,6 +9,8 @@ import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
 import { InicioComponent } from './inicio/inicio.component';
+import { SairComponent } from './sair/sair.component';
+import { AutenticacaoGuardGuard } from './guards/autenticacao-guard.guard';
 
 export const appRoutes: Routes = [
 	{ //Verificar se existe o usuario autenticado.
@@ -22,6 +24,7 @@ export const appRoutes: Routes = [
 	}, {
 		path: 'autenticacao',
 		component: AutenticacaoComponent,
+		canActivate: [AutenticacaoGuardGuard],
 		children: [
 			{
 				path: 'entrar',
@@ -46,5 +49,8 @@ export const appRoutes: Routes = [
 	}, {
 		path: 'inicio',
 		component: InicioComponent
+	}, {
+		path: 'sair',
+		component: SairComponent
 	}
 ];

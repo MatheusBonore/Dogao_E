@@ -1,4 +1,4 @@
-<form>
+<form #autenticacaoEntrarForm="ngForm">
 	<!-- STEP 1 -->
 	<div id="passo-1" ngModelGroup="primeiraParte" *ngIf="verificarStep(1)">
 		<h3>Fazer login</h3>
@@ -6,8 +6,10 @@
 
 		<div class="form-group mt-5">
 			<!-- <label for="email-telefone">E-mail ou telefone</label> -->
-			<input type="text" name="email" #email="ngModel" [(ngModel)]="usuario.email" class="form-control rounded-pill"
-				id="email-telefone" placeholder="E-mail ou telefone" autocomplete="off" required>
+			<input type="email" name="text" #email="ngModel" [(ngModel)]="usuario.email"
+				[class.is-invalid]="email.invalid && (!email.pristine || autenticacaoEntrarForm.submitted)"
+				class="form-control rounded-pill" id="email-telefone" placeholder="E-mail ou telefone" autocomplete="off"
+				required>
 			<div class="clearfix">
 				<button type="button" [routerLink]='["/autenticacao/recuperar/email"]'
 					class="btn btn-link pl-0 pr-0 float-left">Esqueceu
@@ -15,10 +17,11 @@
 			</div>
 		</div>
 
+
 		<div class="clearfix mt-3 mb-3">
 			<button type="button" [routerLink]='["/autenticacao/cadastrar"]' class="btn btn-link pl-0 pr-0 float-left">Criar
 				conta</button>
-			<button type="button" class="btn btn-success rounded-pill float-right"
+			<button type="submit" class="btn btn-success rounded-pill float-right"
 				(click)="verificarEmailTelefone(usuario)">Próxima</button>
 		</div>
 
@@ -36,20 +39,25 @@
 	<div id="passo-2" ngModelGroup="segundaParte" *ngIf="verificarStep(2)">
 		<img src="../../../assets/amazon/user-default.png" class="rounded-circle mt-1" width="130" alt="" srcset="">
 
-		<h3>Olá {{usuario.nome}}</h3>
+		<h3 class="mt-2 text-capitalize">Olá {{usuario.nome}}</h3>
 		<p>{{usuario.email}}</p>
 
 		<div class="form-group mt-1">
 			<!-- <label for="senha">Senha</label> -->
-			<input type="text" name="senha" #senha="ngModel" [(ngModel)]="usuario.senha" class="form-control rounded-pill"
+			<input type="password" name="senha" #senha="ngModel" [(ngModel)]="usuario.senha" class="form-control rounded-pill"
 				id="senha" placeholder="Senha" autocomplete="off" required>
-			<div class="clearfix mt-3">
+			<div class="clearfix">
 				<button type="button" [routerLink]='["/autenticacao/recuperar/senha"]'
 					class="btn btn-link pl-0 pr-0 float-left">Esqueceu
 					sua senha?</button>
-				<button type="button" class="btn btn-success rounded-pill float-right"
-					(click)="verificarSenha(usuario)">Próxima</button>
 			</div>
+		</div>
+
+		<div class="clearfix mt-3">
+			<button type="button" class="btn btn-success rounded-pill float-right"
+				(click)="verificarSenha(usuario)">Próxima</button>
 		</div>
 	</div>
 </form>
+
+{{usuario | json}}

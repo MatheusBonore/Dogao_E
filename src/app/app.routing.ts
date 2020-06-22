@@ -10,7 +10,7 @@ import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
 import { InicioComponent } from './inicio/inicio.component';
 import { SairComponent } from './sair/sair.component';
-import { AutenticacaoGuardGuard } from './guards/autenticacao-guard.guard';
+import { AutenticacaoGuardGuard } from '../guards/autenticacao-guard.guard';
 
 export const appRoutes: Routes = [
 	{ //Verificar se existe o usuario autenticado.

@@ -3,22 +3,3 @@
 .pesquisar {
   @include inicio.botao-efeito;
 }
-
-.filtro {
-  // display: contents;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100%;
-
-  label {
-    @include inicio.botao-efeito;
-    display: inline-flex;
-
-    padding-left: 10px;
-    padding-right: 10px;
-
-    border: solid 2px rgba(242, 242, 242, 0.5);
-
-    margin: 3px;
-  }
-}

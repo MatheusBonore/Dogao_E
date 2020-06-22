@@ -1,9 +1,73 @@
-<div class="categoria" *ngIf="!mostrarInicio" style="position:fixed;  min-width: 320px; max-width: 520px;">
+<div class="mostrar-itens" *ngIf="itemAtivado">
+  <div class="itens-content shadown shadow-sm" [ngSwitch]="itemAtivado">
+    <div *ngSwitchCase="1" id="categorias">
+      <div class="input-group m-3" style="width: auto;">
+        <div class="input-group-prepend">
+          <button class="pesquisar rounded-circle border-0">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="item-categoria comunidade">
+        COMUNIDADE
+      </div>
+      <div class="item-categoria achados">
+        ACHADOS
+      </div>
+      <div class="item-categoria doacao">
+        DOAÇÃO
+      </div>
+      <div class="item-categoria perdidos">
+        PERDIDOS
+      </div>
+    </div>
+    <div *ngSwitchCase="2" id="pesquisar">MATHEUS</div>
+  </div>
+</div>
+
+<!-- Pesquisar -->
+<!-- <div id="pesquisar" class="bg-white p-3" *ngIf="verificaItem('pesquisar')" style="min-width: 320px; max-width: 520px;">
+  <form class="form-inline">
+    <div class="input-group w-100">
+      <div class="input-group-prepend">
+        <button (click)="pesquisar();" class="pesquisar rounded-circle border-0">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+      </div>
+      <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+        style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+      <div class="input-group-prepend">
+        <button for="pesquisar" class="pesquisar rounded-circle border-0">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="filtro text-center h-100 pl-5 pr-5" style="align-items: center; justify-content: center;">
+      <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+        <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+        {{filtro.nome}}
+      </label>
+    </div>
+  </form>
+</div> -->
+
+<!-- Categorias -->
+<!-- <div id="categoria" class="position-fixed align-middle"   *ngIf="verificaItem('categoria')"
+  style="min-width: 320px; max-width: 520px; z-index: 1050;">
   <div class="itens">
     <div id="comunidade" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
+          <button class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -49,7 +113,7 @@
     <div id="achados" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
+          <button class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -95,7 +159,7 @@
     <div id="doacao" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
+          <button class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -141,7 +205,7 @@
     <div id="perdidos" class="tab">
       <div class="input-group m-3" style="width: auto;">
         <div class="input-group-prepend">
-          <button (click)="fecharItem()" class="pesquisar rounded-circle border-0">
+          <button class="pesquisar rounded-circle border-0">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
@@ -184,10 +248,10 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="w-100 h-100" style="background-color: #EAEAEA;" *ngIf="mostrarInicio">
-  <app-nav-bar></app-nav-bar>
+<div class="w-100 h-100" style="background-color: #EAEAEA;">
+  <app-nav-bar (childEvent)="obterItem($event)"></app-nav-bar>
   <app-linha-tempo></app-linha-tempo>
   <app-nav-bar-bottom (childEvent)="obterItem($event)"></app-nav-bar-bottom>
 </div>

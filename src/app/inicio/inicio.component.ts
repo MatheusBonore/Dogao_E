@@ -13,16 +13,9 @@ declare type Filtros = Filtro[];
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
-  private _mostrarInicio: boolean = true;
   private _item: string;
 
-  set mostrarInicio(mostrarInicio: boolean) {
-    this._mostrarInicio = mostrarInicio;
-  }
-
-  get mostrarInicio(): boolean {
-    return this._mostrarInicio;
-  }
+  public itemAtivado: number = 0;
 
   set item(item: string) {
     this._item = item;
@@ -72,13 +65,12 @@ export class InicioComponent implements OnInit {
 
   public obterItem(item: string) {
     this.item = item;
-    if (this.item != '/inicio' && this.item == '/inicio/categoria') {
-      this.mostrarInicio = false;
+    if (this.item === '/inicio'){
+      this.itemAtivado = 0
+    }else if (this.item.substring(7, this.item.length) === '/categorias') { 
+      this.itemAtivado = 1
+    }else if (this.item.substring(7, this.item.length) === '/pesquisar') { 
+      this.itemAtivado = 2
     }
   }
-
-  public fecharItem() {
-    this.mostrarInicio = true;
-  }
-
 }

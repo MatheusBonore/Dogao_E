@@ -30,11 +30,11 @@ export class NavBarBottomComponent implements OnInit {
       }, {
         nome: 'categoria',
         icone: 'fas fa-paw',
-        path: '/inicio/categoria'
+        path: '/inicio/categorias'
       }, {
         nome: 'notificacao',
         icone: 'fas fa-bell',
-        path: '/inicio/notificacao'
+        path: '/inicio/notificacoes'
       }, {
         nome: 'menu',
         icone: 'fas fa-bars',

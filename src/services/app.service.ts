@@ -24,6 +24,6 @@ export class AppService implements OnInit {
   ngOnInit(): void { }
 
   public get headers(): HttpHeaders {
-    return new HttpHeaders().set('Content-Type', 'application/json');
+    return new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
   }
 }

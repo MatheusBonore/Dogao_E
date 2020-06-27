@@ -1,254 +1,98 @@
-<div class="mostrar-itens" *ngIf="itemAtivado">
-  <div class="itens-content shadown shadow-sm" [ngSwitch]="itemAtivado">
+<div class="modal-itens" *ngIf="itemAtivado">
+  <div class="itens shadow-lg" [ngSwitch]="itemAtivado">
+
     <div *ngSwitchCase="1" id="categorias">
-      <div class="input-group m-3" style="width: auto;">
+      <div class="input-group pesquisar">
         <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
+          <button class="pesquisar rounded-circle border-0" (click)="fecharItem()">
             <i class="fas fa-arrow-left"></i>
           </button>
         </div>
+
         <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
+          style="height:40px; background-color: #FFF;" id="pesquisar" placeholder="Pesquisar">
+
         <div class="input-group-prepend">
           <button for="pesquisar" class="pesquisar rounded-circle border-0">
             <i class="fas fa-search"></i>
           </button>
         </div>
       </div>
-      
-      <div class="item-categoria comunidade">
-        COMUNIDADE
+
+      <div class="item-categoria" id="comunidade">
+        <h3>Comunidade</h3>
+
+        <div class="galeria-fotos" (scroll)="onScroll()">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <img src="http://via.placeholder.com/180x180" alt="">
+          <div class="controle-galeria fade show" id="voltar">
+            <button class="btn shadow rounded-pill" (click)="proximaFoto()">
+              <i class="fas fa-chevron-right align-middle"></i>
+            </button>
+          </div>
+          <div class="controle-galeria fade" id="proximo">
+            <button class="btn shadow rounded-pill" (click)="voltarFoto()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          </div>
+        </div>
+
       </div>
-      <div class="item-categoria achados">
+
+      <div class="item-categoria d-none" id="achados">
         ACHADOS
       </div>
-      <div class="item-categoria doacao">
+
+      <div class="item-categoria d-none" id="doacoes">
         DOAÇÃO
       </div>
-      <div class="item-categoria perdidos">
+
+      <div class="item-categoria d-none" id="perdidos">
         PERDIDOS
       </div>
-    </div>
-    <div *ngSwitchCase="2" id="pesquisar">MATHEUS</div>
-  </div>
-</div>
 
-<!-- Pesquisar -->
-<!-- <div id="pesquisar" class="bg-white p-3" *ngIf="verificaItem('pesquisar')" style="min-width: 320px; max-width: 520px;">
-  <form class="form-inline">
-    <div class="input-group w-100">
-      <div class="input-group-prepend">
-        <button (click)="pesquisar();" class="pesquisar rounded-circle border-0">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-      </div>
-      <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-        style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
-      <div class="input-group-prepend">
-        <button for="pesquisar" class="pesquisar rounded-circle border-0">
-          <i class="fas fa-search"></i>
-        </button>
+      <div class="selecionar">
+        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
+          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
+          {{filtro.nome}}
+        </label>
+        <Button class="btn rounded-pill">Selecionar</Button>
       </div>
     </div>
 
-    <div class="filtro text-center h-100 pl-5 pr-5" style="align-items: center; justify-content: center;">
+    <div *ngSwitchCase="2" id="pesquisar">
+      <div class="input-group pesquisar">
+        <div class="input-group-prepend">
+          <button class="pesquisar rounded-circle border-0" (click)="fecharItem()">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+
+        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
+          style="height:40px; background-color: #FFF;" id="pesquisar" placeholder="Pesquisar">
+
+        <div class="input-group-prepend">
+          <button for="pesquisar" class="pesquisar rounded-circle border-0">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
       <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
         <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
         {{filtro.nome}}
       </label>
     </div>
-  </form>
-</div> -->
 
-<!-- Categorias -->
-<!-- <div id="categoria" class="position-fixed align-middle"   *ngIf="verificaItem('categoria')"
-  style="min-width: 320px; max-width: 520px; z-index: 1050;">
-  <div class="itens">
-    <div id="comunidade" class="tab">
-      <div class="input-group m-3" style="width: auto;">
-        <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-        </div>
-        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
-        <div class="input-group-prepend">
-          <button for="pesquisar" class="pesquisar rounded-circle border-0">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-
-      <h3 class="text-center align-middle mt-5 mb-5">Comunidade</h3>
-
-      <div class="galeria text-center align-middle">
-        <div class="fotos">
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
-              srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
-              srcset="">
-          </div>
-        </div>
-      </div>
-
-      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
-        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
-          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
-          {{filtro.nome}}
-        </label>
-      </div>
-
-      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
-        <button class="selecionar pl-5 pr-5">Selecionar</button>
-      </div>
-    </div>
-
-    <div id="achados" class="tab">
-      <div class="input-group m-3" style="width: auto;">
-        <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-        </div>
-        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
-        <div class="input-group-prepend">
-          <button for="pesquisar" class="pesquisar rounded-circle border-0">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-
-      <h3 class="text-center align-middle mt-5 mb-5">Achados</h3>
-
-      <div class="galeria text-center align-middle">
-        <div class="fotos">
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
-              srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
-              srcset="">
-          </div>
-        </div>
-      </div>
-
-      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
-        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
-          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
-          {{filtro.nome}}
-        </label>
-      </div>
-
-      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
-        <button class="selecionar pl-5 pr-5">Selecionar</button>
-      </div>
-    </div>
-
-    <div id="doacao" class="tab">
-      <div class="input-group m-3" style="width: auto;">
-        <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-        </div>
-        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
-        <div class="input-group-prepend">
-          <button for="pesquisar" class="pesquisar rounded-circle border-0">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-
-      <h3 class="text-center align-middle mt-5 mb-5">Doação</h3>
-
-      <div class="galeria text-center align-middle">
-        <div class="fotos">
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
-              srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
-              srcset="">
-          </div>
-        </div>
-      </div>
-
-      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
-        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
-          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
-          {{filtro.nome}}
-        </label>
-      </div>
-
-      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
-        <button class="selecionar pl-5 pr-5">Selecionar</button>
-      </div>
-    </div>
-
-    <div id="perdidos" class="tab">
-      <div class="input-group m-3" style="width: auto;">
-        <div class="input-group-prepend">
-          <button class="pesquisar rounded-circle border-0">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-        </div>
-        <input type="text" class="form-control border-0 rounded-pill ml-2 mr-2"
-          style="height:40px; background-color: #F0F2F5;" id="pesquisar" placeholder="Pesquisar no Dogão">
-        <div class="input-group-prepend">
-          <button for="pesquisar" class="pesquisar rounded-circle border-0">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-
-      <h3 class="text-center align-middle mt-5 mb-5">Perdidos</h3>
-
-      <div class="galeria text-center align-middle">
-        <div class="fotos">
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93522892_2628683097384824_58032520066760704_n.jpg" alt="" srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/92161739_2692704914286069_3017096701602168832_n.jpg" alt=""
-              srcset="">
-          </div>
-          <div class="foto">
-            <img src="../../assets/amazon/Cachorros/93574976_2918787178212320_7248870142321360896_n.jpg" alt=""
-              srcset="">
-          </div>
-        </div>
-      </div>
-
-      <div class="filtro text-center h-100 mt-4 pl-4 pr-4" style="align-items: center; justify-content: center;">
-        <label for="{{filtro.id}}" *ngFor="let filtro of filtros">
-          <input class="d-none" type="checkbox" id="{{filtro.id}}" name="scales" checked>
-          {{filtro.nome}}
-        </label>
-      </div>
-
-      <div style="position: absolute; bottom: 0;" class="w-100 text-center align-middle mb-3">
-        <button class="selecionar pl-5 pr-5">Selecionar</button>
-      </div>
-    </div>
   </div>
-</div> -->
+</div>
 
 <div class="w-100 h-100" style="background-color: #EAEAEA;">
   <app-nav-bar (childEvent)="obterItem($event)"></app-nav-bar>

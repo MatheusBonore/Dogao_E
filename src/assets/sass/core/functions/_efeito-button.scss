@@ -1,0 +1,12 @@
+@mixin btn-default($cor-primaria, $cor-segundaria, $cor-terciaria, $alpha) {
+  background-color: $cor-primaria;
+  color: $cor-segundaria;
+
+  &:hover {
+    background-color: rgba($cor-terciaria, $alpha + 0.1);
+  }
+
+  &:active {
+    background-color: rgba($cor-terciaria, $alpha + 0.3);
+  }
+}

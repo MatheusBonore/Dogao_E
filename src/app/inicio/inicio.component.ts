@@ -65,12 +65,61 @@ export class InicioComponent implements OnInit {
 
   public obterItem(item: string) {
     this.item = item;
-    if (this.item === '/inicio'){
+    if (this.item === '/inicio') {
       this.itemAtivado = 0
-    }else if (this.item.substring(7, this.item.length) === '/categorias') { 
+    } else if (this.item.substring(7, this.item.length) === '/categorias') {
       this.itemAtivado = 1
-    }else if (this.item.substring(7, this.item.length) === '/pesquisar') { 
+    } else if (this.item.substring(7, this.item.length) === '/pesquisar') {
       this.itemAtivado = 2
     }
+  }
+
+  public fecharItem() {
+    this.itemAtivado = 0;
+    this.item = '/inicio';
+  }
+
+  public onScroll() {
+    let fotosAnimais = 'div.galeria-fotos';
+
+    let tamanhoScroll = document.querySelector(fotosAnimais).scrollWidth - 500;
+    let posicaoScroll = document.querySelector(fotosAnimais).scrollLeft;
+
+    let controleFotosProximo = document.querySelector(fotosAnimais + ' div#proximo');
+    let controleFotosVoltar = document.querySelector(fotosAnimais + ' div#voltar');
+
+    if (posicaoScroll)
+      controleFotosProximo.classList.add('show');
+    else
+      controleFotosProximo.classList.remove('show');
+
+    if (posicaoScroll <= tamanhoScroll && posicaoScroll !== tamanhoScroll)
+      controleFotosVoltar.classList.add('show');
+    else
+      controleFotosVoltar.classList.remove('show');
+  }
+
+  public proximaFoto() {
+    let fotosAnimais = 'div.galeria-fotos';
+    let ElementofotosAnimais = document.querySelector(fotosAnimais);
+
+    let tamanhoFoto = document.querySelector(fotosAnimais + ' img').clientHeight;
+
+    ElementofotosAnimais.scrollBy({
+      left: tamanhoFoto,
+      behavior: 'smooth'
+    });
+  }
+
+  public voltarFoto() {
+    let fotosAnimais = 'div.galeria-fotos';
+    let ElementofotosAnimais = document.querySelector(fotosAnimais);
+
+    let tamanhoFoto = document.querySelector(fotosAnimais + ' img').clientHeight;
+
+    ElementofotosAnimais.scrollBy({
+      left: -tamanhoFoto,
+      behavior: 'smooth'
+    });
   }
 }

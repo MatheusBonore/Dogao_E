@@ -1,5 +1,9 @@
-@use '../inicio.component.scss' as inicio;
+@use "../../../assets/sass/app" as app;
 
-.pesquisar {
-  @include inicio.botao-efeito;
+nav {
+  button#btn-pesquisar {
+    @include app.btn-default(transparent, #343a40, #000, 0);
+    width: 40px;
+    height: 40px;
+  }
 }

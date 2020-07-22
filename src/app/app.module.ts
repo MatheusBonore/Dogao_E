@@ -25,6 +25,7 @@ import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NavBarComponent } from './inicio/nav-bar/nav-bar.component';
 import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.component';
+import { MenuModalItensComponent } from './inicio/nav-bar-bottom/menu-modal-itens/menu-modal-itens.component';
 
 import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
 
@@ -40,6 +41,7 @@ import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component'
     InicioComponent,
     NavBarComponent,
     NavBarBottomComponent,
+    MenuModalItensComponent,
     LinhaTempoComponent
   ],
   imports: [

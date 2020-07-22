@@ -1,10 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 declare interface Item {
   nome: string;
   icone: string;
-  path: string;
 }
 
 declare type Itens = Item[];
@@ -15,43 +13,36 @@ declare type Itens = Item[];
   styleUrls: ['./nav-bar-bottom.component.scss']
 })
 export class NavBarBottomComponent implements OnInit {
-  public itens: Itens;
+  public itemSelecionado: string;
+  public listaItens: Itens;
 
-  @Output() public childEvent = new EventEmitter<string>();
-
-  constructor(
-    private location: Location
-  ) {
-    this.itens = [
+  constructor() {
+    this.listaItens = [
       {
         nome: 'inicio',
-        icone: 'fas fa-home',
-        path: '/inicio'
+        icone: 'fas fa-home'
       }, {
         nome: 'categoria',
-        icone: 'fas fa-paw',
-        path: '/inicio/categorias'
+        icone: 'fas fa-paw'
       }, {
         nome: 'notificacao',
-        icone: 'fas fa-bell',
-        path: '/inicio/notificacoes'
+        icone: 'fas fa-bell'
       }, {
         nome: 'menu',
-        icone: 'fas fa-bars',
-        path: '/inicio/menu'
+        icone: 'fas fa-bars'
       }
     ];
   }
 
   ngOnInit(): void {
-    this.retornarItem(this.itens[0]);
+    this.retornarInicio();
   }
 
-  public seEncontraNoLink(item: Item): boolean {
-    return this.location.path() == item.path;
+  public selecionarItem(_item: string) {
+    this.itemSelecionado = _item;
   }
 
-  public retornarItem(item: Item) {
-    this.childEvent.emit(item.path);
+  public retornarInicio(){
+    this.itemSelecionado = this.listaItens[0].nome;
   }
 }

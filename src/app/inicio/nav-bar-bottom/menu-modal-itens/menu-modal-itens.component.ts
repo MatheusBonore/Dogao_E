@@ -93,10 +93,16 @@ export class MenuModalItensComponent implements OnInit {
   }
 
   public trocarCategoria(_button: number): void {
+    let _modal_categoria = document.querySelector('div#categoria');
+
     this.listaCategoria.forEach(e => {
-      e.ativado = false;
+      if (e.ativado) {
+        _modal_categoria.classList.remove(e.id);
+        e.ativado = false;
+      }
     });
 
     this.listaCategoria[_button].ativado = true;
+    _modal_categoria.classList.add(this.listaCategoria[_button].id);
   }
 }

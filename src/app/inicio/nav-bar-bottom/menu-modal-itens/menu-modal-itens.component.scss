@@ -1,7 +1,7 @@
 @use "../../../../assets/sass/app" as app;
 
 div.modal-itens {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.2);
 	justify-content: center;
 
 	position: fixed;
@@ -25,8 +25,35 @@ div.modal-itens {
 			max-width: 500px;
 
 			&#categoria {
-				background-color: #00a1f1;
-				border-bottom: solid 4px #0080bc;
+				border-bottom: solid 4px;
+				&.comunidade {
+					background-color: #00a1f1;
+					border-bottom-color: #0080bc;
+					div#filtros > div.btn-group-toggle > label.btn.active {
+						color: #00a1f1;
+					}
+				}
+				&.achado {
+					background-color: #7cbb00;
+					border-bottom-color: #669900;
+					div#filtros > div.btn-group-toggle > label.btn.active {
+						color: #7cbb00;
+					}
+				}
+				&.doacao {
+					background-color: #ffbb00;
+					border-bottom-color: #664a00;
+					div#filtros > div.btn-group-toggle > label.btn.active {
+						color: #ffbb00;
+					}
+				}
+				&.perdido {
+					background-color: #f65314;
+					border-bottom-color: #300e02;
+					div#filtros > div.btn-group-toggle > label.btn.active {
+						color: #f65314;
+					}
+				}
 
 				div#pesquisa {
 					padding: 15px 10px 0;
@@ -110,16 +137,60 @@ div.modal-itens {
 							margin: 5px 5px 5px;
 
 							&.active {
-								color: #00a1f1;
 								background-color: white;
 							}
 						}
 					}
 				}
+				div#trocar-categoria {
+					button {
+						border-radius: 25px;
+						border: solid 3px white;
+						outline-style: none;
+
+						margin: 2px;
+
+						width: 20px;
+						height: 20px;
+
+						&.comunidade {
+							background-color: #00a1f1;
+						}
+						&.achado {
+							background-color: #7cbb00;
+						}
+						&.doacao {
+							background-color: #ffbb00;
+						}
+						&.perdido {
+							background-color: #f65314;
+						}
+
+						&.ativo {
+							width: 40px;
+						}
+					}
+				}
 			} // &#categoria
 			&#pesquisa {
-				background-color: rgba(255, 255, 255, 1);
+				background-color: white;
 			} // &#pesquisa
+			&#menu {
+				background-color: white;
+				div#titulo {
+					div.input-group-prepend {
+						button {
+							@include app.btn-default(transparent, #343a40, #000, 0);
+							width: 40px;
+							height: 40px;
+						}
+					}
+				}
+				div#itens {
+					@include app.btn-default(transparent, #343a40, #000, 0);
+					cursor: pointer;
+				}
+			}
 
 			@media screen and (max-width: 767px) {
 				box-shadow: none;
@@ -137,33 +208,3 @@ div.modal-itens {
 		} // div.item
 	} // div.modal-item
 } // div.modal-itens
-
-div#teste {
-	button {
-		border-radius: 25px;
-		border: solid 3px white;
-		outline-style: none;
-
-		margin: 2px;
-
-		width: 20px;
-		height: 20px;
-
-		&.comunidade {
-			background-color: #00a1f1;
-		}
-		&.achado {
-			background-color: #7cbb00;
-		}
-		&.doacao {
-			background-color: #ffbb00;
-		}
-		&.perdido {
-			background-color: #f65314;
-		}
-
-		&.ativo{
-			width: 40px;
-		}
-	}
-}

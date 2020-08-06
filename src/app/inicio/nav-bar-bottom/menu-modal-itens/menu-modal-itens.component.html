@@ -1,7 +1,7 @@
 <div class="modal-itens" *ngIf="itemSelecionado !== 'inicio'">
 	<div class="modal-item" [ngSwitch]="itemSelecionado">
-		<div id="categoria" class="item" *ngSwitchCase="'categoria'">
-			<div id="pesquisa" class="input-group">
+		<div id="categoria" class="item comunidade" *ngSwitchCase="'categoria'">
+			<div id="pesquisa" class="input-group pt-4 pr-4 pl-4">
 				<div class="input-group-prepend">
 					<button class="pesquisar rounded-circle border-0" (click)="fecharItem()">
 						<i class="fas fa-arrow-left"></i>
@@ -62,11 +62,33 @@
 					</label>
 				</div>
 			</div>
-			<div id="teste" class="text-center">
+			<div id="trocar-categoria" class="text-center">
 				<button *ngFor="let categoria of listaCategoria; let i = index" class="btn-categoria {{ categoria.id }}"
 					[ngClass]="{'ativo': categoria.ativado}" (click)="trocarCategoria(i)"></button>
 			</div>
 		</div>
 		<div id="pesquisa" class="item" *ngSwitchCase="'pesquisa'"></div>
+		<div id="menu" class="item" *ngSwitchCase="'menu'">
+			<div class="p-4">
+				<div id="titulo" class="input-group d-flex flex-wrap flex-md-nowrap align-items-center mb-3">
+					<div class="input-group-prepend pr-2">
+						<button class="rounded-circle border-0 " (click)="fecharItem()">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+					</div>
+
+					<h4 style="color:#434343; font-weight: 700;">Menu</h4>
+				</div>
+
+				<div id="itens" class="media p-2 rounded">
+					<img class="mr-2 rounded-circle" style="width: 38px; height: 38px;"
+						src="../../../../assets/amazon/ft/99055632_158647448972525_3629662387809812480_o.jpg">
+					<p class="media-body mb-0 small ">
+						<strong class="d-block text-gray-dark">Matheus Henrique Conceição Bonore</strong>
+						Veja seu perfil
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

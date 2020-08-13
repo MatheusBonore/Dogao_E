@@ -1,5 +1,6 @@
 <div class="modal-itens" *ngIf="itemSelecionado !== 'inicio'">
 	<div class="modal-item" [ngSwitch]="itemSelecionado">
+
 		<div id="pesquisa" class="item" *ngSwitchCase="'pesquisa'"></div>
 		<div id="categoria" class="item comunidade" *ngSwitchCase="'categoria'">
 			<div id="pesquisa" class="input-group pt-4 pr-4 pl-4">
@@ -96,7 +97,9 @@
 						</button>
 					</li>
 					<li class="item shadow-sm rounded mb-2 bg-white">
-						<button class="w-100 p-2 border-0 bg-transparent">
+						<button class="w-100 p-2 border-0 bg-transparent" id="buttonCollapseFeedback" data-toggle="collapse"
+							data-target="#collapseFeedback" aria-expanded="false" aria-controls="collapseFeedback"
+							(click)="mudarCollapse(0)">
 							<div class="media" style="display: flex; align-items: center;">
 								<div class="mr-3 rounded-circle"
 									style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
@@ -106,28 +109,32 @@
 									<p class="h6 m-0">Dar feedback</p>
 									Ajude-nos a melhorar o Dogão
 								</div>
-								<div class="ml-3"
+								<div class="ml-3" id="arrow"
 									style="width: 48px; height: 48px; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: large;">
 									<i class="fas fa-chevron-right"></i>
 								</div>
 							</div>
 						</button>
-						<button class="w-100 p-2 border-0 bg-transparent">
-							<div class="media" style="display: flex; align-items: center;">
-								<div class="mr-3 rounded-circle"
-									style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
-									<img src="../../../../assets/amazon/logo4.png" width="25px" height="25px">
+						<div id="collapseFeedback" class="collapse">
+							<button class="w-100 p-2 border-0 bg-transparent">
+								<div class="media" style="display: flex; align-items: center;">
+									<div class="mr-3 rounded-circle"
+										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
+										<img src="../../../../assets/amazon/logo4.png" width="25px" height="25px">
+									</div>
+									<div class="media-body text-left">
+										<p class="h6 m-0">Ajude-nos a melhorar o Dogão</p>
+										Dê feedback sobre sua experiência no Dogão
+									</div>
 								</div>
-								<div class="media-body text-left">
-									<p class="h6 m-0">Ajude-nos a melhorar o Dogão</p>
-									Dê feedback sobre sua experiência no Dogão
-								</div>
-							</div>
-						</button>
+							</button>
+						</div>
 					</li>
 					<ul class="grupo shadow-sm rounded mb-2 bg-white">
 						<li>
-							<button class="w-100 p-2 border-0 bg-transparent">
+							<button class="w-100 p-2 border-0 bg-transparent" id="buttonCollapseConfiguracoes" data-toggle="collapse"
+								data-target="#collapseConfiguracoes" aria-expanded="false" aria-controls="collapseConfiguracoes"
+								(click)="mudarCollapse(1)">
 								<div class="media" style="display: flex; align-items: center;">
 									<div class="mr-3 rounded-circle"
 										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
@@ -136,38 +143,42 @@
 									<div class="media-body text-left">
 										<p class="h6 m-0">Configurações</p>
 									</div>
-									<div class="ml-3"
+									<div class="ml-3" id="arrow"
 										style="width: 48px; height: 48px; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: large;">
 										<i class="fas fa-chevron-right"></i>
 									</div>
 								</div>
 							</button>
-							<button class="w-100 p-2 border-0 bg-transparent">
-								<div class="media" style="display: flex; align-items: center;">
-									<div class="mr-3 rounded-circle"
-										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
-										<i class="fas fa-cog"></i>
+							<div id="collapseConfiguracoes" class="collapse">
+								<button class="w-100 p-2 border-0 bg-transparent">
+									<div class="media" style="display: flex; align-items: center;">
+										<div class="mr-3 rounded-circle"
+											style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
+											<i class="fas fa-cog"></i>
+										</div>
+										<div class="media-body text-left">
+											<p class="h6 m-0">Ajustes</p>
+										</div>
 									</div>
-									<div class="media-body text-left">
-										<p class="h6 m-0">Ajustes</p>
+								</button>
+								<button class="w-100 p-2 border-0 bg-transparent">
+									<div class="media" style="display: flex; align-items: center;">
+										<div class="mr-3 rounded-circle"
+											style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
+											<i class="fas fa-list"></i>
+										</div>
+										<div class="media-body text-left">
+											<p class="h6 m-0">Registro de atividades</p>
+										</div>
 									</div>
-								</div>
-							</button>
-							<button class="w-100 p-2 border-0 bg-transparent">
-								<div class="media" style="display: flex; align-items: center;">
-									<div class="mr-3 rounded-circle"
-										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
-										<i class="fas fa-list"></i>
-									</div>
-									<div class="media-body text-left">
-										<p class="h6 m-0">Registro de atividades</p>
-									</div>
-								</div>
-							</button>
-							<hr>
+								</button>
+								<hr>
+							</div>
 						</li>
 						<li>
-							<button class="w-100 p-2 border-0 bg-transparent">
+							<button class="w-100 p-2 border-0 bg-transparent" id="buttonCollapseAjuda" data-toggle="collapse"
+								data-target="#collapseAjuda" aria-expanded="false" aria-controls="collapseAjuda"
+								(click)="mudarCollapse(2)">
 								<div class="media" style="display: flex; align-items: center;">
 									<div class="mr-3 rounded-circle"
 										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
@@ -176,35 +187,37 @@
 									<div class="media-body text-left">
 										<p class="h6 m-0">Ajuda e suporte</p>
 									</div>
-									<div class="ml-3"
+									<div class="ml-3" id="arrow"
 										style="width: 48px; height: 48px; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: large;">
 										<i class="fas fa-chevron-right"></i>
 									</div>
 								</div>
 							</button>
-							<button class="w-100 p-2 border-0 bg-transparent">
-								<div class="media" style="display: flex; align-items: center;">
-									<div class="mr-3 rounded-circle"
-										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
-										<i class="fas fa-question"></i>
+							<div id="collapseAjuda" class="collapse">
+								<button class="w-100 p-2 border-0 bg-transparent">
+									<div class="media" style="display: flex; align-items: center;">
+										<div class="mr-3 rounded-circle"
+											style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
+											<i class="fas fa-question"></i>
+										</div>
+										<div class="media-body text-left">
+											<p class="h6 m-0">Central de ajuda</p>
+										</div>
 									</div>
-									<div class="media-body text-left">
-										<p class="h6 m-0">Central de ajuda</p>
+								</button>
+								<button class="w-100 p-2 border-0 bg-transparent">
+									<div class="media" style="display: flex; align-items: center;">
+										<div class="mr-3 rounded-circle"
+											style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
+											<i class="fas fa-comment-alt"></i>
+										</div>
+										<div class="media-body text-left">
+											<p class="h6 m-0">Comunidade de ajuda</p>
+										</div>
 									</div>
-								</div>
-							</button>
-							<button class="w-100 p-2 border-0 bg-transparent">
-								<div class="media" style="display: flex; align-items: center;">
-									<div class="mr-3 rounded-circle"
-										style="width: 48px; height: 48px; background-color: #E4E6EB; color:#5F666F; display: flex; align-items: center; justify-content: center; font-size: x-large;">
-										<i class="fas fa-comment-alt"></i>
-									</div>
-									<div class="media-body text-left">
-										<p class="h6 m-0">Comunidade de ajuda</p>
-									</div>
-								</div>
-							</button>
-							<hr>
+								</button>
+								<hr>
+							</div>
 						</li>
 						<li>
 							<button class="w-100 p-2 border-0 bg-transparent">

@@ -105,4 +105,26 @@ export class MenuModalItensComponent implements OnInit {
     this.listaCategoria[_button].ativado = true;
     _modal_categoria.classList.add(this.listaCategoria[_button].id);
   }
+
+  public mudarCollapse(_e: number) {
+    let listaCollapse: Array<any> = [
+      { descricao: 'buttonCollapseFeedback' },
+      { descricao: 'buttonCollapseConfiguracoes' },
+      { descricao: 'buttonCollapseAjuda' }
+    ];
+
+    let _button = document.querySelector('button#' + listaCollapse[_e].descricao);
+    let _arrow = _button.querySelector('div#arrow i')
+    _arrow.classList.forEach(e => {
+      if (e === 'fa-chevron-right'){
+        _arrow.classList.remove('fa-chevron-right')
+        _arrow.classList.add('fa-chevron-left')
+      }
+
+      if (e === 'fa-chevron-left'){
+        _arrow.classList.remove('fa-chevron-left')
+        _arrow.classList.add('fa-chevron-right')
+      }
+    });
+  }
 }

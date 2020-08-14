@@ -28,6 +28,10 @@ import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.co
 import { MenuModalItensComponent } from './inicio/nav-bar-bottom/menu-modal-itens/menu-modal-itens.component';
 
 import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalCategoriaComponent } from './inicio/nav-bar-bottom/modal-categoria/modal-categoria.component';
+import { ModalNotificacaoComponent } from './inicio/nav-bar-bottom/modal-notificacao/modal-notificacao.component';
+import { ModalMenuComponent } from './inicio/nav-bar-bottom/modal-menu/modal-menu.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component'
     NavBarComponent,
     NavBarBottomComponent,
     MenuModalItensComponent,
-    LinhaTempoComponent
+    LinhaTempoComponent,
+    ModalCategoriaComponent,
+    ModalNotificacaoComponent,
+    ModalMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,7 @@ import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component'
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ModalModule.forRoot(),
   ],
   providers: [
     AppService,

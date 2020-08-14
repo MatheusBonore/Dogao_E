@@ -1,7 +1,7 @@
 <nav class="navbar fixed-bottom navbar-light bg-white border-top p-0 justify-content-center">
   <div class="row menu container-fluid p-0 m-0">
     <button class="col" *ngFor="let item of listaItens" [ngClass]="{'active': item.nome === itemSelecionado}"
-      (click)="selecionarItem(item.nome)">
+      (click)="selecionarItem(item)">
       <span>
         <i [ngClass]="item.icone"></i>
       </span>
@@ -9,4 +9,6 @@
   </div>
 </nav>
 
-<app-menu-modal-itens [item]="itemSelecionado" (retorno)="retornarInicio()"></app-menu-modal-itens>
+<app-modal-categoria></app-modal-categoria>
+<app-modal-notificacao></app-modal-notificacao>
+<app-modal-menu></app-modal-menu>

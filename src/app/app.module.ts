@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { appRoutes } from './app.routing';
 import { AppRoutingModule } from './app.routing.module';
@@ -23,15 +24,14 @@ import { EmailComponent } from './autenticacao/recuperar/email/email.component';
 import { SenhaComponent } from './autenticacao/recuperar/senha/senha.component';
 
 import { InicioComponent } from './inicio/inicio.component';
-import { NavBarComponent } from './inicio/nav-bar/nav-bar.component';
-import { NavBarBottomComponent } from './inicio/nav-bar-bottom/nav-bar-bottom.component';
-import { MenuModalItensComponent } from './inicio/nav-bar-bottom/menu-modal-itens/menu-modal-itens.component';
+import { NavbarComponent } from './inicio/navbar/navbar.component';
+import { NavbarBottomComponent } from './inicio/navbar-bottom/navbar-bottom.component';
+
+import { ModalCategoriaComponent } from './inicio/navbar-bottom/modal-categoria/modal-categoria.component';
+import { ModalNotificacaoComponent } from './inicio/navbar-bottom/modal-notificacao/modal-notificacao.component';
+import { ModalMenuComponent } from './inicio/navbar-bottom/modal-menu/modal-menu.component';
 
 import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { ModalCategoriaComponent } from './inicio/nav-bar-bottom/modal-categoria/modal-categoria.component';
-import { ModalNotificacaoComponent } from './inicio/nav-bar-bottom/modal-notificacao/modal-notificacao.component';
-import { ModalMenuComponent } from './inicio/nav-bar-bottom/modal-menu/modal-menu.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +43,8 @@ import { ModalMenuComponent } from './inicio/nav-bar-bottom/modal-menu/modal-men
     EmailComponent,
     SenhaComponent,
     InicioComponent,
-    NavBarComponent,
-    NavBarBottomComponent,
-    MenuModalItensComponent,
+    NavbarComponent,
+    NavbarBottomComponent,
     LinhaTempoComponent,
     ModalCategoriaComponent,
     ModalNotificacaoComponent,

@@ -14,11 +14,11 @@ declare interface Item {
 declare type Itens = Item[];
 
 @Component({
-  selector: 'app-nav-bar-bottom',
-  templateUrl: './nav-bar-bottom.component.html',
-  styleUrls: ['./nav-bar-bottom.component.scss']
+  selector: 'app-navbar-bottom',
+  templateUrl: './navbar-bottom.component.html',
+  styleUrls: ['./navbar-bottom.component.scss']
 })
-export class NavBarBottomComponent implements OnInit, AfterViewInit {
+export class NavbarBottomComponent implements OnInit, AfterViewInit {
 
   @ViewChild(ModalCategoriaComponent) modalCategoriaComponent: ModalCategoriaComponent;
   @ViewChild(ModalNotificacaoComponent) modalNotificacaoComponent: ModalNotificacaoComponent;

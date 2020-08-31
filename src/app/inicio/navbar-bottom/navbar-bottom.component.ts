@@ -31,52 +31,54 @@ export class NavbarBottomComponent implements OnInit, AfterViewInit {
 
   private itemInicio: Item = {
     nome: 'inicio',
-    icone: 'fas fa-home'
+    icone: 'fas fa-home',
   };
 
   constructor(
     private modalService: BsModalService,
-  ) {}
-  
+  ) { }
+
   ngOnInit(): void {
     this.retornarInicio();
   }
-  
+
   ngAfterViewInit(): void {
 
-    setTimeout(
-      () => {
-        this.listaItens = [
-          this.itemInicio,
-          {
-            nome: 'categoria',
-            icone: 'fas fa-paw',
-            modal: this.modalCategoriaComponent,
-          }, {
-            nome: 'notificacao',
-            icone: 'fas fa-bell',
-            modal: this.modalNotificacaoComponent,
-          }, {
-            nome: 'menu',
-            icone: 'fas fa-bars',
-            modal: this.modalMenuComponent,
-          }
-        ];
-      }, 0
-    );
+    setTimeout(() => {
+      this.listaItens = [
+        this.itemInicio,
+        {
+          nome: 'categoria',
+          icone: 'fas fa-paw',
+          modal: this.modalCategoriaComponent,
+        }, {
+          nome: 'notificacao',
+          icone: 'fas fa-bell',
+          modal: this.modalNotificacaoComponent,
+        }, {
+          nome: 'menu',
+          icone: 'fas fa-bars',
+          modal: this.modalMenuComponent,
+        }
+      ];
+    });
   }
 
   public selecionarItem(item: Item) {
     this.itemSelecionado = item.nome;
-    this.modalRef = this.modalService.show(item.modal.template, {});
+    this.modalRef = this.modalService.show(item.modal.template, {
+      class: 'teste',
+    });
   }
 
-  public retornarInicio(){
+  public retornarInicio() {
     this.itemSelecionado = this.itemInicio.nome;
   }
 
   public fecharItem() {
     this.modalRef.hide();
     this.modalRef = null;
+
+    this.retornarInicio();
   }
 }

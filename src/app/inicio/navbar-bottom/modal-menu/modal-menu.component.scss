@@ -1,219 +1,26 @@
-@use "./../../../../assets/sass/app.scss" as app;
+// @use "./../../../../assets/sass/app.scss" as app;
 
-div.modal-itens {
-	background-color: rgba(0, 0, 0, 0.2);
-	justify-content: center;
+// #menu {
+// 	background-color: #f1f3f5;
+// 	div#titulo {
+// 		div.input-group-prepend {
+// 			button {
+// 				@include app.btn-default(transparent, #343a40, #000, 0);
+// 				width: 40px;
+// 				height: 40px;
+// 			}
+// 		}
+// 	}
 
-	position: fixed;
-	z-index: 1050;
+// 	ul.itens-menu {
+// 		list-style: none;
+// 		padding-inline-start: unset;
+// 		// li.item {
+// 		// }
 
-	width: 100vw;
-	height: 100vh;
-
-	div.item {
-		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-		border-radius: 25px;
-
-		position: relative;
-		
-		width: 100%;
-		height: 100%;
-
-		margin: 2rem auto;
-
-		max-width: 500px;
-		min-height: 700px;
-
-		overflow: auto;
-
-		&#categoria {
-			border-bottom: solid 4px;
-			&.comunidade {
-				background-color: #00a1f1;
-				border-bottom-color: #0080bc;
-				div#filtros > div.btn-group-toggle > label.btn.active {
-					color: #00a1f1;
-				}
-			}
-			&.achado {
-				background-color: #7cbb00;
-				border-bottom-color: #669900;
-				div#filtros > div.btn-group-toggle > label.btn.active {
-					color: #7cbb00;
-				}
-			}
-			&.doacao {
-				background-color: #ffbb00;
-				border-bottom-color: #daa002;
-				div#filtros > div.btn-group-toggle > label.btn.active {
-					color: #ffbb00;
-				}
-			}
-			&.perdido {
-				background-color: #f65314;
-				border-bottom-color: #a84016;
-				div#filtros > div.btn-group-toggle > label.btn.active {
-					color: #f65314;
-				}
-			}
-
-			div#pesquisa {
-				padding: 15px 10px 0;
-
-				input {
-					margin: 0 15px 0;
-
-					width: 40px;
-					height: auto;
-				}
-				button {
-					@include app.btn-default(transparent, #fff, #fff, 0);
-					width: 40px;
-					height: 40px;
-				}
-			}
-			// div#titulo { }
-			div#galeria-fotos {
-				position: relative;
-
-				display: inline-flex;
-				-webkit-align-items: center;
-				align-items: center;
-
-				width: 100%;
-				div.controles {
-					position: absolute;
-					padding: 0 15px 0;
-
-					width: 100%;
-					height: auto;
-
-					div#proximo,
-					div#voltar {
-						z-index: 2;
-						button {
-							color: white;
-
-							line-height: 0px;
-
-							width: 45px;
-							height: 45px;
-							&:hover {
-								@include app.btn-default(#fff, #343a40, #fff, 0.8);
-							}
-						}
-					}
-				}
-				div.fotos {
-					z-index: 1;
-
-					display: inline-flex;
-
-					width: -webkit-fill-available;
-					height: 180px;
-
-					overflow-x: none;
-					overflow-y: auto;
-					&::-webkit-scrollbar {
-						display: none;
-					}
-					img {
-						box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-						border-radius: 5px;
-					}
-					img:not(:first-child) {
-						margin-left: 20px;
-					}
-				}
-			}
-			div#filtros {
-				div.btn-group-toggle {
-					padding: 0 15% 0;
-					label.btn {
-						color: white;
-						border: solid 3px white;
-						border-radius: 25px;
-
-						font-weight: 600;
-
-						margin: 5px 5px 5px;
-
-						&.active {
-							background-color: white;
-						}
-					}
-				}
-			}
-			div#trocar-categoria {
-				button {
-					border-radius: 25px;
-					border: solid 3px white;
-					outline-style: none;
-
-					margin: 2px;
-
-					width: 20px;
-					height: 20px;
-
-					&.comunidade {
-						background-color: #00a1f1;
-					}
-					&.achado {
-						background-color: #7cbb00;
-					}
-					&.doacao {
-						background-color: #ffbb00;
-					}
-					&.perdido {
-						background-color: #f65314;
-					}
-
-					&.ativo {
-						width: 40px;
-					}
-				}
-			}
-		} // &#categoria
-		&#pesquisa {
-			background-color: white;
-		} // &#pesquisa
-		&#menu {
-			background-color: #f1f3f5;
-			div#titulo {
-				div.input-group-prepend {
-					button {
-						@include app.btn-default(transparent, #343a40, #000, 0);
-						width: 40px;
-						height: 40px;
-					}
-				}
-			}
-
-			ul.itens-menu {
-				list-style: none;
-				padding-inline-start: unset;
-				// li.item {
-				// }
-
-				ul.grupo {
-					list-style: none;
-					padding-inline-start: unset;
-				}
-			}
-		}
-
-		@media screen and (max-width: 767px) {
-			box-shadow: none;
-			border-radius: 0px;
-
-			margin: 0 auto;
-
-			max-height: none;
-			max-width: none;
-
-			&#categoria {
-				border-bottom: none;
-			}
-		} // @media
-	} // div.item
-} // div.modal-itens
+// 		ul.grupo {
+// 			list-style: none;
+// 			padding-inline-start: unset;
+// 		}
+// 	}
+// }

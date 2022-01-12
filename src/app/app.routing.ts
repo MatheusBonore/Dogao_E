@@ -24,7 +24,7 @@ export const appRoutes: Routes = [
 	}, {
 		path: 'autenticacao',
 		component: AutenticacaoComponent,
-		canActivate: [AutenticacaoGuardGuard],
+		// canActivate: [AutenticacaoGuardGuard],
 		children: [
 			{
 				path: 'entrar',

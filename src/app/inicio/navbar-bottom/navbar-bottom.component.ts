@@ -1,14 +1,9 @@
 import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit, ElementRef } from '@angular/core';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { ModalCategoriaComponent } from './modal-categoria/modal-categoria.component';
-import { ModalNotificacaoComponent } from './modal-notificacao/modal-notificacao.component';
-import { ModalMenuComponent } from './modal-menu/modal-menu.component';
-import { NavbarModal } from './navbar-modal.interface';
 
 declare interface Item {
-  nome: string;
+  name: string;
   icone: string;
-  modal?: NavbarModal;
+  routerLink: string;
 }
 
 declare type Itens = Item[];
@@ -19,66 +14,37 @@ declare type Itens = Item[];
   styleUrls: ['./navbar-bottom.component.scss']
 })
 export class NavbarBottomComponent implements OnInit, AfterViewInit {
-
-  @ViewChild(ModalCategoriaComponent) modalCategoriaComponent: ModalCategoriaComponent;
-  @ViewChild(ModalNotificacaoComponent) modalNotificacaoComponent: ModalNotificacaoComponent;
-  @ViewChild(ModalMenuComponent) modalMenuComponent: ModalMenuComponent;
-
-  private modalRef: BsModalRef;
-
-  public itemSelecionado: string;
-  public listaItens: Itens;
+  public itens: Itens;
 
   private itemInicio: Item = {
-    nome: 'inicio',
+    name: 'inicio',
     icone: 'fas fa-home',
+    routerLink: '/inicio',
   };
 
-  constructor(
-    private modalService: BsModalService,
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.retornarInicio();
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
 
     setTimeout(() => {
-      this.listaItens = [
+      this.itens = [
         this.itemInicio,
         {
-          nome: 'categoria',
+          name: 'animais',
           icone: 'fas fa-paw',
-          modal: this.modalCategoriaComponent,
+          routerLink: '/animais',
         }, {
-          nome: 'notificacao',
+          name: 'notificacao',
           icone: 'fas fa-bell',
-          modal: this.modalNotificacaoComponent,
+          routerLink: '/notificacao',
         }, {
-          nome: 'menu',
+          name: 'menu',
           icone: 'fas fa-bars',
-          modal: this.modalMenuComponent,
+          routerLink: '/menu',
         }
       ];
     });
-  }
-
-  public selecionarItem(item: Item) {
-    this.itemSelecionado = item.nome;
-    this.modalRef = this.modalService.show(item.modal.template, {
-      class: 'teste',
-    });
-  }
-
-  public retornarInicio() {
-    this.itemSelecionado = this.itemInicio.nome;
-  }
-
-  public fecharItem() {
-    this.modalRef.hide();
-    this.modalRef = null;
-
-    this.retornarInicio();
   }
 }

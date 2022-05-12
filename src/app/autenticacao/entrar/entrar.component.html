@@ -8,8 +8,8 @@
 			<!-- <label for="email-telefone">E-mail ou telefone</label> -->
 			<input type="email" name="text" #email="ngModel" [(ngModel)]="usuario.email"
 				[class.is-invalid]="email.invalid && (!email.pristine || autenticacaoEntrarForm.submitted)"
-				class="form-control rounded-pill" id="email-telefone" placeholder="E-mail ou telefone" autocomplete="off"
-				required>
+				class="form-control rounded-pill" id="email-telefone" placeholder="E-mail ou telefone"
+				autocomplete="off" required>
 			<div class="clearfix">
 				<button type="button" [routerLink]='["/autenticacao/recuperar/email"]'
 					class="btn btn-link pl-0 pr-0 float-left">Esqueceu
@@ -19,20 +19,21 @@
 
 
 		<div class="clearfix mt-3 mb-3">
-			<button type="button" [routerLink]='["/autenticacao/cadastrar"]' class="btn btn-link pl-0 pr-0 float-left">Criar
+			<button type="button" [routerLink]='["/autenticacao/cadastrar"]'
+				class="btn btn-link pl-0 pr-0 float-left">Criar
 				conta</button>
 			<button type="submit" class="btn btn-success rounded-pill float-right"
 				(click)="verificarEmailTelefone(usuario)">Próxima</button>
 		</div>
 
-		<p>ou entrar com</p>
+		<!-- <p>ou entrar com</p>
 
 		<div class="redes-sociais">
 			<button type="button" class="btn btn-light"><img src="../../../assets/amazon/logo-google.png" alt=""
 					srcset=""> Fazer login com o Google</button>
 			<button type="button" class="btn btn-light"><img src="../../../assets/amazon/logo-facebook.png" alt=""
 					srcset=""></button>
-		</div>
+		</div> -->
 	</div>
 
 	<!-- STEP 2 -->
@@ -44,8 +45,8 @@
 
 		<div class="form-group mt-1">
 			<!-- <label for="senha">Senha</label> -->
-			<input type="password" name="senha" #senha="ngModel" [(ngModel)]="usuario.senha" class="form-control rounded-pill"
-				id="senha" placeholder="Senha" autocomplete="off" required>
+			<input type="password" name="senha" #senha="ngModel" [(ngModel)]="usuario.senha"
+				class="form-control rounded-pill" id="senha" placeholder="Senha" autocomplete="off" required>
 			<div class="clearfix">
 				<button type="button" [routerLink]='["/autenticacao/recuperar/senha"]'
 					class="btn btn-link pl-0 pr-0 float-left">Esqueceu

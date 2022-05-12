@@ -27,10 +27,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './inicio/navbar/navbar.component';
 import { NavbarBottomComponent } from './inicio/navbar-bottom/navbar-bottom.component';
 
-import { ModalCategoriaComponent } from './inicio/navbar-bottom/modal-categoria/modal-categoria.component';
-import { ModalNotificacaoComponent } from './inicio/navbar-bottom/modal-notificacao/modal-notificacao.component';
-import { ModalMenuComponent } from './inicio/navbar-bottom/modal-menu/modal-menu.component';
-
 import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component';
 
 @NgModule({
@@ -46,9 +42,6 @@ import { LinhaTempoComponent } from './inicio/linha-tempo/linha-tempo.component'
     NavbarComponent,
     NavbarBottomComponent,
     LinhaTempoComponent,
-    ModalCategoriaComponent,
-    ModalNotificacaoComponent,
-    ModalMenuComponent,
   ],
   imports: [
     BrowserModule,

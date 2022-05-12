@@ -6,7 +6,7 @@ $cor-padrao-precionado: rgba(242, 242, 242, 0.5);
 
 $cor-padrao-ativado: rgba(220, 78, 64, 1);
 
-.menu button.active:after {
+.menu a.active:after {
 	display: block;
 	content: "";
 	position: absolute;
@@ -29,7 +29,7 @@ $cor-padrao-ativado: rgba(220, 78, 64, 1);
 
 	overflow: hidden;
 
-	button.active {
+	a.active {
 		color: $cor-padrao-ativado;
 
 		/* mouse over link */
@@ -48,7 +48,7 @@ $cor-padrao-ativado: rgba(220, 78, 64, 1);
 		}
 	}
 
-	button {
+	a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -100,6 +100,6 @@ $cor-padrao-ativado: rgba(220, 78, 64, 1);
 	}
 }
 
-.modal-content::ng-deep{
+.modal-content::ng-deep {
 	background-color: red !important;
 }

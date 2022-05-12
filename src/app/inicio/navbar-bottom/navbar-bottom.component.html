@@ -1,14 +1,9 @@
 <nav class="navbar fixed-bottom navbar-light bg-white border-top p-0 justify-content-center">
   <div class="row menu container-fluid p-0 m-0">
-    <button class="col" *ngFor="let item of listaItens" [ngClass]="{'active': item.nome === itemSelecionado}"
-      (click)="selecionarItem(item)">
+    <a class="col" routerLink="{{item.routerLink}}" *ngFor="let item of itens" routerLinkActive="active">
       <span>
         <i [ngClass]="item.icone"></i>
       </span>
-    </button>
+    </a>
   </div>
 </nav>
-
-<app-modal-categoria></app-modal-categoria>
-<app-modal-notificacao></app-modal-notificacao>
-<app-modal-menu></app-modal-menu>
